@@ -22,7 +22,10 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 381BA480 \
     && apt-get update -y -q \
 
     && R -e "install.packages('readxl', repos = 'https://cran.r-project.org', type = 'source', dependencies = TRUE)" \
-    && R -e "install.packages('dplyr', repos = NULL, type = 'source', dependencies = TRUE)" \
+    && R -e "devtools::install_github('dkahle/ggmap')" \
+    && R -e "install.packages('https://r.docker.stat.auckland.ac.nz/src/contrib/iNZightMaps_2.1.1.tar.gz', repos = NULL, type = 'source', dependencies = TRUE)" \
+    && R -e "install.packages('https://r.docker.stat.auckland.ac.nz/src/contrib/iNZightPlots_2.7.12.tar.gz', repos = NULL, type = 'source', dependencies = TRUE)" \
+    && R -e "install.packages('dplyr', repos = NULL, dependencies = TRUE)" \
     && R -e "install.packages('GGally', repos = 'https://cran.r-project.org', type = 'source', dependencies = TRUE)" \
     
   && rm -rf /tmp/* /var/tmp/*
