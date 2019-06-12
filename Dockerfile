@@ -19,7 +19,7 @@ ENV LAST_BUILD_DATE "Wed 12 06 21:45:00 NZDT 2019"
 # Install (via R) all of the necessary packages (R will automatially install dependencies):
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 381BA480 \
     && echo "deb [check-valid-until=no] http://archive.debian.org/debian stretch main" | sudo tee -a /etc/apt/sources.list \
-    && apt-get update -y -q \
+    && apt-get -o Acquire::Check-Valid-Until=false update -y -q \
 
   && R -e "install.packages('readr', repos = 'https://cran.r-project.org', type = 'source', dependencies = TRUE)" \
   && R -e "install.packages(c('haven', 'chron', 'lubridate', 'validate'), repos = 'https://cran.r-project.org', type = 'source', dependencies = TRUE)" \
