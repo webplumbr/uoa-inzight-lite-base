@@ -6,7 +6,7 @@
 #
 # --------------------------------------------------------
 
-FROM scienceis/uoa-inzight-lite-base:shengwei20181220
+FROM scienceis/uoa-inzight-lite-base:play
 
 MAINTAINER "Science IS Team" ws@sit.auckland.ac.nz
 
@@ -17,8 +17,6 @@ MAINTAINER "Science IS Team" ws@sit.auckland.ac.nz
 ENV LAST_BUILD_DATE "Wed 12 06 21:45:00 NZDT 2019"
 
 # Install (via R) all of the necessary packages (R will automatially install dependencies):
-RUN R -e "install.packages('readr', repos = 'https://cran.r-project.org', type = 'source', dependencies = TRUE)" \
-  && R -e "install.packages(c('haven', 'chron', 'lubridate', 'validate'), repos = 'https://cran.r-project.org', type = 'source', dependencies = TRUE)" \
-  && R -e "install.packages('iNZightTools', repos = 'http://r.docker.stat.auckland.ac.nz/R/')" \
+RUN R -e "install.packages('https://r.docker.stat.auckland.ac.nz/src/contrib/iNZightTools_1.7.1.tar.gz', repos = NULL, type = 'source', dependencies = TRUE)" \
     
   && rm -rf /tmp/* /var/tmp/*
