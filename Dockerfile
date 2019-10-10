@@ -6,7 +6,7 @@
 #
 # --------------------------------------------------------
 
-FROM scienceis/uoa-inzight-lite-base:play
+FROM scienceis/uoa-inzight-lite-base:latest
 
 MAINTAINER "Science IS Team" ws@sit.auckland.ac.nz
 
@@ -14,9 +14,9 @@ MAINTAINER "Science IS Team" ws@sit.auckland.ac.nz
 # Since we fetch the latest changes from the associated Application~s master branch
 # this helps trigger date based build
 # The other option would be to tag git builds and refer to the latest tag
-ENV LAST_BUILD_DATE "Wed 12 06 21:45:00 NZDT 2019"
+ENV LAST_BUILD_DATE "Thursday 10 10 21:45:00 NZDT 2019"
 
 # Install (via R) all of the necessary packages (R will automatially install dependencies):
-RUN R -e "install.packages('https://r.docker.stat.auckland.ac.nz/src/contrib/iNZightTools_1.7.1.tar.gz', repos = NULL, type = 'source', dependencies = TRUE)" \
+RUN R -e "devtools::install_github("iNZightVIT/iNZightTS", ref = "dev")" \
     
   && rm -rf /tmp/* /var/tmp/*
