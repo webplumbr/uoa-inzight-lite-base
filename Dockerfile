@@ -17,6 +17,7 @@ MAINTAINER "Science IS Team" ws@sit.auckland.ac.nz
 ENV LAST_BUILD_DATE "Thursday 10 10 21:45:00 NZDT 2019"
 
 # Install (via R) all of the necessary packages (R will automatially install dependencies):
-RUN R -e "devtools::install_github("iNZightVIT/iNZightTS", ref = "dev")" \
-    
+RUN R -e "install.packages('devtools', repos = 'https://cran.r-project.org', type = 'source', dependencies = TRUE)" \
+&& R -e "devtools::install_github("iNZightVIT/iNZightTS", ref = "dev")" \
+
   && rm -rf /tmp/* /var/tmp/*
