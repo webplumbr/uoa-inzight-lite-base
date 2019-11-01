@@ -17,9 +17,10 @@ MAINTAINER "Science IS Team" ws@sit.auckland.ac.nz
 ENV LAST_BUILD_DATE "Thursday 10 10 21:45:00 NZDT 2019"
 
 # Install (via R) all of the necessary packages (R will automatially install dependencies):
-RUN sudo apt-get update \
-  && sudo apt-get install -y -q \
-                     r-base-dev \
+RUN ld -lgfortran --verbose
+ # && sudo apt-get install -y -q \
+ #                    r-base-dev \
+ 
   && R -e "devtools::install_github('iNZightVIT/iNZightPlots', ref = 'dev')" \
 
   && rm -rf /tmp/* /var/tmp/*
