@@ -19,6 +19,6 @@ ENV LAST_BUILD_DATE "Thursday 10 10 21:45:00 NZDT 2019"
 # Install (via R) all of the necessary packages (R will automatially install dependencies):
 RUN ln -s /usr/lib/gcc/x86_64-linux-gnu/4.9/libgfortran.so /usr/lib/libgfortran.so \
 
-  && R -e "devtools::install_github('iNZightVIT/iNZightPlots', ref = 'dev')" \
+  && R -e "install.packages('formatR', repos = 'https://cran.r-project.org', type = 'source', dependencies = TRUE)" \
 
   && rm -rf /tmp/* /var/tmp/*
