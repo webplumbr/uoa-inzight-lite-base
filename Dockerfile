@@ -18,5 +18,7 @@ ENV LAST_BUILD_DATE "Sat 2 11 21:45:00 NZDT 2019"
 
 # Install (via R) all of the necessary packages (R will automatially install dependencies):
 RUN R -e "install.packages('iNZightTools', repos = 'http://r.docker.stat.auckland.ac.nz/R/')" \
+&& R -e "install.packages('iNZightPlots', repos = 'http://r.docker.stat.auckland.ac.nz/R/')" \
+&& R -e "install.packages('iNZightRegression', repos = 'http://r.docker.stat.auckland.ac.nz/R/')" \
 
   && rm -rf /tmp/* /var/tmp/*
