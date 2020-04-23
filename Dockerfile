@@ -17,9 +17,6 @@ MAINTAINER "Science IS Team" ws@sit.auckland.ac.nz
 ENV LAST_BUILD_DATE "Tue 24 03 21:45:00 NZDT 2020"
 
 
-
-devtools::install_github("iNZightVIT/iNZightPlots")
-
 # Install (via R) all of the necessary packages (R will automatially install dependencies):
 RUN R -e "devtools::install_github('iNZightVIT/iNZightTools')" \
  && R -e "devtools::install_github('iNZightVIT/iNZightMR')" \
