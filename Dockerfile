@@ -18,7 +18,7 @@ ENV LAST_BUILD_DATE "Tue 24 03 21:45:00 NZDT 2020"
 
 generics
 # Install (via R) all of the necessary packages (R will automatially install dependencies):
-RUN R -e "devtools::install_github('generics', dependencies = TRUE)" \
+RUN R -e "install.packages('generics', dependencies = TRUE)" \
  && R -e "devtools::install_github('iNZightVIT/iNZightTools', dependencies = FALSE)" \
  && R -e "devtools::install_github('iNZightVIT/iNZightMR', dependencies = FALSE)" \
  && R -e "devtools::install_github('iNZightVIT/iNZightPlots', dependencies = FALSE)" \
