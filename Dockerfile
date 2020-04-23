@@ -17,7 +17,7 @@ MAINTAINER "Science IS Team" ws@sit.auckland.ac.nz
 ENV LAST_BUILD_DATE "Tue 24 03 21:45:00 NZDT 2020"
 
 # Install (via R) all of the necessary packages (R will automatially install dependencies):
-RUN R -e "install.packages('generics', dependencies = TRUE)" \
+RUN R -e "install.packages('generics',  repos = 'https://cran.r-project.org', type = 'source', dependencies = TRUE)" \
  && R -e "devtools::install_github('iNZightVIT/iNZightTools', dependencies = FALSE)" \
  && R -e "devtools::install_github('iNZightVIT/iNZightMR', dependencies = FALSE)" \
  && R -e "devtools::install_github('iNZightVIT/iNZightPlots', dependencies = FALSE)" \
