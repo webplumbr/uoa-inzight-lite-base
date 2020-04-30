@@ -16,6 +16,7 @@ RUN apt-get update \
     && apt-get install -y -q \
     vim\
     libgeos-dev\
+    libudunits2-dev\
   && R -e "devtools::install_github('iNZightVIT/iNZightMaps', dependencies = T)" \
   && rm -rf /tmp/* /var/tmp/*
 
