@@ -18,6 +18,7 @@ RUN apt-get update \
     libgeos-dev\
     libudunits2-dev\
     libgdal-dev\
+  && R -e "devtools::install_github('daniel-barnett/ggsfextra', dependencies = T)" \
   && R -e "devtools::install_github('iNZightVIT/iNZightMaps', dependencies = T)" \
   && rm -rf /tmp/* /var/tmp/*
 
