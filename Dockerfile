@@ -17,6 +17,6 @@ MAINTAINER "Science IS Team" ws@sit.auckland.ac.nz
 ENV LAST_BUILD_DATE "Wed 26 02 21:45:00 NZDT 2020"
 
 # Install (via R) all of the necessary packages (R will automatially install dependencies):
-RUN R -e "install.packages('sf', repos = 'https://cran.r-project.org', type = 'source', dependencies = TRUE)" \
-
+RUN R -e "install.packages('gridSVG', repos = 'https://cran.r-project.org', type = 'source', dependencies = TRUE)" \
+  && R -e "devtools::install_github('iNZightVIT/iNZightTS', dependencies = TRUE)" \
   && rm -rf /tmp/* /var/tmp/*
