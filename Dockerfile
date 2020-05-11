@@ -22,7 +22,7 @@ RUN R -e "install.packages('https://cran.r-project.org/src/contrib/Archive/RCurl
  && R -e "devtools::install_github('iNZightVIT/iNZightTools', dependencies = F)" \
  && R -e "devtools::install_github('iNZightVIT/iNZightMR', dependencies = F)" \
  && R -e "devtools::install_github('iNZightVIT/iNZightPlots', dependencies = F)" \
- && R -e "devtools::install_github('iNZightVIT/iNZightMaps', dependencies = F)" \
+ && R -e "devtools::install_github('iNZightVIT/iNZightMaps', dependencies = T)" \
  
  # && R -e "install.packages('https://r.docker.stat.auckland.ac.nz/src/contrib/iNZightTS_1.5.1.tar.gz', repos = NULL, type = 'source', dependencies = TRUE)" \
   && rm -rf /tmp/* /var/tmp/*
