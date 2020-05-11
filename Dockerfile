@@ -18,8 +18,9 @@ ENV LAST_BUILD_DATE "Mon 11 05 21:45:00 NZDT 2020"
 
 # Install (via R) all of the necessary packages (R will automatially install dependencies):
 RUN R -e "install.packages('https://cran.r-project.org/src/contrib/Archive/RCurl/RCurl_1.95-4.12.tar.gz', repos = NULL, type = 'source', dependencies = TRUE)" \ 
- && R -e "devtools::install_github('iNZightVIT/iNZightTools', dependencies = F)" \
- && R -e "devtools::install_github('iNZightVIT/iNZightMR', dependencies = T)" \
+ && R -e "devtools::install_github('iNZightVIT/iNZightTools', dependencies = T)" \
+ && R -e "devtools::install_github('iNZightVIT/iNZightMR', dependencies = F)" \
+ && R -e "devtools::install_github('tidyverse/ggplot2', dependencies = T)" \
  && R -e "devtools::install_github('iNZightVIT/iNZightPlots', dependencies = T)" \
  && R -e "devtools::install_github('iNZightVIT/iNZightMaps', dependencies = T)" \
  
