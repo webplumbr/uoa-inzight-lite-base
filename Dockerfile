@@ -17,10 +17,8 @@ MAINTAINER "Science IS Team" ws@sit.auckland.ac.nz
 ENV LAST_BUILD_DATE "Sun 24 11 21:45:00 NZDT 2019"
 
 # Install (via R) all of the necessary packages (R will automatially install dependencies):
-RUN apt-get update \
-    && apt-get install -y -q \
-    default-jre\
-    default-jdk\
-  && R CMD javareconf -e\
-  && R -e "install.packages(c('rJava', 'sas7bdat'), repos = 'https://cran.r-project.org', type = 'source', dependencies = TRUE)" \
+RUN R -e "install.packages('gridSVG', repos = 'https://cran.r-project.org', type = 'source', dependencies = TRUE)" \
+&& R -e "install.packages('https://r.docker.stat.auckland.ac.nz/src/contrib/iNZightTS_1.5.4.tar.gz', repos = NULL, type = 'source', dependencies = TRUE)"\
+&& R -e "install.packages('https://r.docker.stat.auckland.ac.nz/src/contrib/iNZightMultivariate_0.1.1.tar.gz', repos = NULL, type = 'source', dependencies = TRUE)"\
+&& R -e "devtools::install_github('iNZightVIT/iNZightPlots@release/2.12', dependencies = TRUE)"\
   && rm -rf /tmp/* /var/tmp/*
