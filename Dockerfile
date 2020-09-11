@@ -6,7 +6,7 @@
 #
 # --------------------------------------------------------
 
-FROM scienceis/uoa-inzight-lite-base:shengwei20181220
+FROM scienceis/uoa-inzight-lite-base:dev
 
 MAINTAINER "Science IS Team" ws@sit.auckland.ac.nz
 
@@ -17,5 +17,5 @@ MAINTAINER "Science IS Team" ws@sit.auckland.ac.nz
 ENV LAST_BUILD_DATE "Wed 26 02 21:45:00 NZDT 2020"
 
 # Install (via R) all of the necessary packages (R will automatially install dependencies):
-RUN R -e "install.packages('https://r.docker.stat.auckland.ac.nz/src/contrib/iNZightPlots_2.12.2.tar.gz', repos = NULL, type = 'source', dependencies = TRUE)"\
+RUN R -e "install.packages('https://r.docker.stat.auckland.ac.nz/src/contrib/iNZightTS_1.5.5.tar.gz', repos = NULL, type = 'source', dependencies = TRUE)"\
   && rm -rf /tmp/* /var/tmp/*
