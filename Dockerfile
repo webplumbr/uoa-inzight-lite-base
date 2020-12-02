@@ -16,9 +16,10 @@ MAINTAINER "Science IS Team" ws@sit.auckland.ac.nz
 # The other option would be to tag git builds and refer to the latest tag
 ENV LAST_BUILD_DATE "Wed 26 02 21:45:00 NZDT 2020"
 
+#\
+#  && rm -rf /tmp/* /var/tmp/*
 # Install (via R) all of the necessary packages (R will automatially install dependencies):
 RUN apt-get install -y locales locales-all
 ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US.UTF-8\
-  && rm -rf /tmp/* /var/tmp/*
+ENV LANGUAGE en_US.UTF-8
