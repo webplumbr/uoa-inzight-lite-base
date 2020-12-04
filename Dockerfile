@@ -19,7 +19,7 @@ ENV LAST_BUILD_DATE "Wed 26 02 21:45:00 NZDT 2020"
 #\
 #  && rm -rf /tmp/* /var/tmp/*
 # Install (via R) all of the necessary packages (R will automatially install dependencies):
-RUN apt-get install -y locales locales-all
+RUN apt-get install -y locales locales-all \
 #ENV LC_ALL en_US.UTF-8
 RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
 && locale-gen en_US.utf8 \
