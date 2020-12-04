@@ -17,12 +17,16 @@ MAINTAINER "Science IS Team" ws@sit.auckland.ac.nz
 ENV LAST_BUILD_DATE "Wed 26 02 21:45:00 NZDT 2020"
 
 #\
-#  && rm -rf /tmp/* /var/tmp/*
+#  
 # Install (via R) all of the necessary packages (R will automatially install dependencies):
-RUN apt-get update && apt-get install -y locales locales-all \
+RUN apt-get update \
+&& apt-get install -y -q \
+         locales \
+&& apt-get clean \
+&& rm -rf /tmp/* /var/tmp/*
 #ENV LC_ALL en_US.UTF-8
-&& echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
-&& locale-gen en_US.utf8 \
-&& /usr/sbin/update-locale LANG=en_US.UTF-8
+RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
+        && locale-gen en_US.utf8 \
+        && /usr/sbin/update-locale LANG=en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
