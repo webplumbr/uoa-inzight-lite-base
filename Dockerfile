@@ -5,7 +5,7 @@
 # packages
 #
 # ----------------------------------------
-FROM scienceis/uoa-inzight-lite-base:latest
+FROM scienceis/uoa-inzight-lite-base:dev
 
 MAINTAINER "Science IS Team" ws@sit.auckland.ac.nz
 
